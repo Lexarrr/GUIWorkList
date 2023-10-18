@@ -26,9 +26,6 @@ public class MainController {
     Button click;
 
     @FXML
-    Button payClick;
-
-    @FXML
     GridPane gp;
 
     @FXML
@@ -54,23 +51,23 @@ public class MainController {
 
     }
 
-    private void toCreateBd(GridPane gridPane) throws IOException {
-        int id = 1;
-        int k = gp.getRowCount();
-        Map<Integer, Node> workerMap = new HashMap<>();
-        while (k > 0)
-            for (int i = 1; i < gridPane.getColumnCount(); i++) {
-                workerMap.put(id++, gp.getChildren().get(i));
-            }
-        String fn = "BDList.txt";
-        BufferedWriter bw = new BufferedWriter(new FileWriter(fn));
-        try {
-            bw.write(workerMap.toString());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        bw.close();
-    }
+//    private void toCreateBd(GridPane gridPane) throws IOException {
+//        int id = 1;
+//        int k = gp.getRowCount();
+//        Map<Integer, Node> workerMap = new HashMap<>();
+//        while (k > 0)
+//            for (int i = 1; i < gridPane.getColumnCount(); i++) {
+//                workerMap.put(id++, gp.getChildren().get(i));
+//            }
+//        String fn = "BDList.txt";
+//        BufferedWriter bw = new BufferedWriter(new FileWriter(fn));
+//        try {
+//            bw.write(workerMap.toString());
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//        bw.close();
+//    }
 
     private void buttonAddOnTable() {
         click.setOnAction(actionEvent -> {
@@ -97,7 +94,8 @@ public class MainController {
         toSetSavings(g);
         toMenu(g);
         gp.setId("stringRow");
-
+//        g.setHgap(10);
+//        gp.setMaxHeight(20);
 
     }
 
@@ -137,7 +135,6 @@ public class MainController {
         double tsp = ran.nextInt(2000);
         if (tsp > sgt){
             warn.setText("you don't have enough funds!");
-
         } else {
             String res = String.valueOf(sgt - tsp);
             savings.setText(res);
