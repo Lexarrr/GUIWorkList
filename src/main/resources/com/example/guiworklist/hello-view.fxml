@@ -1,16 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.guiworklist.HelloController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane id="all" prefHeight="487.0" prefWidth="734.0" stylesheets="@mainStyle.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.guiworklist.MainController">
+   <children>
+   
+        <Label fx:id="welcomeText" />
+      <TitledPane animated="false" layoutX="1.0" layoutY="33.0" prefHeight="352.0" prefWidth="734.0" text="Workers">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="732.0">
+               <children>
+                  <GridPane fx:id="gp" alignment="CENTER" layoutX="3.0" prefHeight="50.0" prefWidth="727.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="86.0" minWidth="10.0" prefWidth="32.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.0" minWidth="10.0" prefWidth="99.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.0" minWidth="10.0" prefWidth="104.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="111.0" minWidth="10.0" prefWidth="56.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.0" minWidth="10.0" prefWidth="67.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="187.0" minWidth="10.0" prefWidth="92.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="187.0" minWidth="10.0" prefWidth="107.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="183.0" minWidth="10.0" prefWidth="82.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="189.0" minWidth="10.0" prefWidth="135.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label id="text" text="№" />
+                        <Label id="text" text="Name" GridPane.columnIndex="1" />
+                        <Label id="text" text="Age" GridPane.columnIndex="3" />
+                        <Label id="text" text="Work Exp." GridPane.columnIndex="4" />
+                        <Label id="text" text="Position" GridPane.columnIndex="5" />
+                        <Label id="text" contentDisplay="CENTER" text="Salary" GridPane.columnIndex="6" />
+                        <Label id="text" text="Savings" GridPane.columnIndex="7" />
+                        <Label id="text" text="Actions for Employers" GridPane.columnIndex="8" />
+                        <Label id="text" text="Surname" GridPane.columnIndex="2" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <MenuButton id="button" layoutX="14.0" layoutY="403.0" mnemonicParsing="false" text="MenuButton">
+        <items>
+          <MenuItem mnemonicParsing="false" onAction="#toAddNewWorker" text="New" />
+            <MenuItem mnemonicParsing="false" onAction="#toQuit" text="Quit a worker" />
+        </items>
+      </MenuButton>
+      <Label layoutX="246.0" layoutY="5.0" text="WORKER lIST FOR DIRECTOR">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Button id="button" fx:id="click" layoutX="636.0" layoutY="403.0" mnemonicParsing="false" text="Add to Table" />
+      <Label fx:id="warn" layoutX="339.0" layoutY="393.0" />
+   </children>
+</AnchorPane>

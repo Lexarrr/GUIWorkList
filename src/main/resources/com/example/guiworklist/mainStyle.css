@@ -1,0 +1,49 @@
+#all {
+-fx-background-color: "#1e2120";
+}
+
+
+#gp{
+-fx-background-color: "#1e2120";
+-fx-text-fill: white;
+-fx-padding: 5px;
+
+
+}
+
+#text{
+-fx-text-fill: white;
+-fx-font-size: 12px;
+}
+
+#button{
+
+-fx-text-fill: white;
+-fx-background-color: none;
+-fx-border-color: "#d4d0d6";
+-fx-border-radius: 5px;
+-fx-font-size: 10px;
+
+}
+
+#button:hover{
+
+-fx-background-color:
+linear-gradient(from 0% 93% to 0% 100%, #c7d0cc 0%, #e3e8e6 100%),
+            #e3e8e6,
+            #91a39c,
+            radial-gradient(center 50% 50%, radius 100%, #91a39c, #e3e8e6);
+
+-fx-effect: dropshadow(gaussian, #c7d0cc, 10, 0.5, 0.0, 0.0);
+-fx-text-fill: black;
+}
+
+#stringRow{
+
+-fx-text-fill: white;
+-fx-font-size: 15px;
+-fx-padding: 10 7 7 5;
+-fx-padding:5px;
+-fx-background-color: "#1e2120";
+
+}

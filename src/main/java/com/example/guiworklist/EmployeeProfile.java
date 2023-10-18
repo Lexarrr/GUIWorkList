@@ -1,2 +1,4 @@
-package com.example.guiworklist;public class EmployeeProfile {
+package com.example.guiworklist;
+
+public class EmployeeProfile {
 }
